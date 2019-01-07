@@ -5,7 +5,7 @@ use std::error::Error;
 use std::io::prelude::*;
 
 mod coder;
-use coder::ALPHABET_SIZE;
+use coder::*;
 
 enum Mode {
     Encode,
@@ -56,8 +56,8 @@ fn main() {
     };
 
     if mode == Mode::Encode {
-        println!("{}", coder::encode(content, shift));
+        println!("{}", encode(content, shift));
     } else if mode == Mode::Decode {
-        println!("{}", coder::decode(content, shift));
+        println!("{}", decode(content, shift));
     }
 }
