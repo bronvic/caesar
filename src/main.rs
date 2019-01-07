@@ -7,19 +7,10 @@ use std::io::prelude::*;
 mod coder;
 use coder::*;
 
+#[derive(PartialEq)]
 enum Mode {
     Encode,
     Decode,
-}
-
-impl PartialEq for Mode {
-    fn eq(&self, other: &Mode) -> bool {
-        match (&self, other) {
-            (Mode::Encode, Mode::Encode) => true,
-            (Mode::Decode, Mode::Decode) => true,
-            (_,_) => false,
-        }
-    }
 }
 
 fn main() {
